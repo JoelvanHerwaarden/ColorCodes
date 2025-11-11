@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Palette</title>
+  <style>
+    /* Base styling for the page */
+    body {
+      font-family: sans-serif; /* Clean, modern font */
+      margin: 20px; /* Padding around the page */
+    }
+
+    /* Container holds all color cards and wraps them into rows */
+    .container {
+      display: flex; /* Enables Flexbox layout */
+      flex-wrap: wrap; /* Allows items to wrap into multiple rows */
+      gap: 40px; /* Space between columns and rows */
+      justify-content: space-between; /* Distributes columns evenly */
+    }
+
+    /* Each color card is a column in the grid */
+    .color-card {
+      flex: 1 1 calc(33.333% - 40px); /* Responsive 3-column layout with spacing */
+      box-sizing: border-box; /* Includes padding/border in width calculation */
+      text-align: center; /* Centers text inside each card */
+    }
+
+    /* The colored box itself */
+    .color-box {
+      width: 100%; /* Full width of the card */
+      height: 150px; /* Fixed height for visual consistency */
+      border: 1px solid #ccc; /* Light border around the box */
+      margin-bottom: 10px; /* Space between box and label */
+    }
+
+    /* Styling for the hex code label */
+    .label {
+      font-weight: bold; /* Makes the hex code stand out */
+    }
+
+    /* Responsive layout for smaller screens */
+    @media (max-width: 768px) {
+      .color-card {
+        flex: 1 1 100%; /* Stacks cards vertically on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Color Usage Reference</h2>
+
+  <!-- Container for all color cards -->
+  <div class="container">
+    <!-- Individual color card -->
+    <div class="color-card">
+      <div class="color-box" style="background-color:#039DFF;"></div>
+      <div class="label">#039DFF</div>
+      <p>Primary Button</p>
+    </div>
+
+    <div class="color-card">
+      <div class="color-box" style="background-color:#FF5733;"></div>
+      <div class="label">#FF5733</div>
+      <p>Alert Background</p>
+    </div>
+
+    <div class="color-card">
+      <div class="color-box" style="background-color:#28A745;"></div>
+      <div class="label">#28A745</div>
+      <p>Success Message</p>
+    </div>
+
+    <div class="color-card">
+      <div class="color-box" style="background-color:#FFC107;"></div>
+      <div class="label">#FFC107</div>
+      <p>Warning Highlight</p>
+    </div>
+
+    <div class="color-card">
+      <div class="color-box" style="background-color:#6C757D;"></div>
+      <div class="label">#6C757D</div>
+      <p>Secondary Text</p>
+    </div>
+
+    <div class="color-card">
+      <div class="color-box" style="background-color:#343A40;"></div>
+      <div class="label">#343A40</div>
+      <p>Dark Background</p>
+    </div>
+  </div>
+</body>
+</html>
