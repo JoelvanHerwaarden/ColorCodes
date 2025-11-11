@@ -6,7 +6,7 @@
     body {
       font-family: sans-serif;
       margin: 20px;
-      color: #808080; /* Neutral gray font */
+      color: #808080;
     }
 
     .container {
@@ -21,19 +21,33 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      align-items: center; /* Center content horizontally */
+      align-items: center;
       text-align: center;
+      position: relative;
     }
 
     .color-box {
-      width: 300px; /* Fixed width */
+      width: 300px;
       height: 150px;
       border: 1px solid #ccc;
       margin-bottom: 10px;
+      cursor: pointer;
     }
 
     .label {
       font-weight: bold;
+    }
+
+    .popup {
+      position: absolute;
+      top: 10px;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: none;
+      z-index: 1;
     }
 
     @media (max-width: 768px) {
@@ -42,48 +56,91 @@
       }
     }
   </style>
-
 </head>
 <body>
 
-  <!-- Container for all color cards -->
+  <h2>Color Usage Reference</h2>
   <div class="container">
-    <!-- Individual color card -->
     <div class="color-card">
-      <div class="color-box" style="background-color:#039DFF;"></div>
-      <div class="label">#039DFF</div>
-      <p>Blue</p>
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#dce1af;" onclick="copyColor(this)"> </div>
+      <div class="label">#dce1af</div>
+      <p>Site - Grass</p>
+    </div>
+	<div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#f2d3ce;" onclick="copyColor(this)"> </div>
+      <div class="label">#f2d3ce</div>
+      <p>Site - Building</p>
+    </div>
+	<div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#f3f3f3;" onclick="copyColor(this)"> </div>
+      <div class="label">#f3f3f3</div>
+      <p>Site - Building (Conceptual)</p>
+    </div>
+	<div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#9b978b;" onclick="copyColor(this)"> </div>
+      <div class="label">#9b978b</div>
+      <p>Water - Murky</p>
+    </div>
+	<div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#7abdff;" onclick="copyColor(this)"> </div>
+      <div class="label">#7abdff</div>
+      <p>Water - In-Scope</p>
+    </div>
+	
+    <div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#cfe1ed;" onclick="copyColor(this)"> </div>
+      <div class="label">#cfe1ed</div>
+      <p>Water - Out-scope</p>
+    </div>
+
+    
+    <div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#d1d1d1;" onclick="copyColor(this)"> </div>
+      <div class="label">#d1d1d1</div>
+      <p>Road - Asphalt</p>
     </div>
 
     <div class="color-card">
-      <div class="color-box" style="background-color:#FF5733;"></div>
-      <div class="label">#FF5733</div>
-      <p>Alert Background</p>
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#ffb8b8;" onclick="copyColor(this)"> </div>
+      <div class="label">#ffb8b8</div>
+      <p>Road - Cycling</p>
+    </div>
+	<div class="color-card">
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#666666;" onclick="copyColor(this)"> </div>
+      <div class="label">#666666</div>
+      <p>Road - Markings</p>
     </div>
 
     <div class="color-card">
-      <div class="color-box" style="background-color:#28A745;"></div>
-      <div class="label">#28A745</div>
-      <p>Success Message</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background-color:#FFC107;"></div>
-      <div class="label">#FFC107</div>
-      <p>Warning Highlight</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background-color:#6C757D;"></div>
-      <div class="label">#6C757D</div>
-      <p>Secondary Text</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-box" style="background-color:#343A40;"></div>
+      <div class="popup">Copied!</div>
+      <div class="color-box" style="background-color:#343A40;" onclick="copyColor(this)"> </div>
       <div class="label">#343A40</div>
       <p>Dark Background</p>
     </div>
   </div>
+
+  <script>
+    function copyColor(box) {
+      const card = box.parentElement;
+      const label = card.querySelector('.label').textContent;
+      const popup = card.querySelector('.popup');
+
+      navigator.clipboard.writeText(label).then(() => {
+        popup.style.display = 'block';
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 1000);
+      });
+    }
+  </script>
 </body>
 </html>
