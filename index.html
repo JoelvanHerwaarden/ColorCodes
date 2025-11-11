@@ -3,50 +3,48 @@
 <head>
   <title>Color Palette</title>
   <style>
-    /* Base styling for the page */
     body {
-      font-family: sans-serif; /* Clean, modern font */
-      margin: 20px; /* Padding around the page */
+      font-family: sans-serif;
+      margin: 20px;
+      color: #808080; /* Neutral gray font */
     }
 
-    /* Container holds all color cards and wraps them into rows */
     .container {
-      display: flex; /* Enables Flexbox layout */
-      flex-wrap: wrap; /* Allows items to wrap into multiple rows */
-      gap: 40px; /* Space between columns and rows */
-      justify-content: space-between; /* Distributes columns evenly */
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
     }
 
-    /* Each color card is a column in the grid */
     .color-card {
-      flex: 1 1 calc(33.333% - 40px); /* Responsive 3-column layout with spacing */
-      box-sizing: border-box; /* Includes padding/border in width calculation */
-      text-align: center; /* Centers text inside each card */
+      flex: 1 1 calc(33.333% - 40px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center content horizontally */
+      text-align: center;
     }
 
-    /* The colored box itself */
     .color-box {
-      width: 100%; /* Full width of the card */
-      height: 150px; /* Fixed height for visual consistency */
-      border: 1px solid #ccc; /* Light border around the box */
-      margin-bottom: 10px; /* Space between box and label */
+      width: 300px; /* Fixed width */
+      height: 150px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
     }
 
-    /* Styling for the hex code label */
     .label {
-      font-weight: bold; /* Makes the hex code stand out */
+      font-weight: bold;
     }
 
-    /* Responsive layout for smaller screens */
     @media (max-width: 768px) {
       .color-card {
-        flex: 1 1 100%; /* Stacks cards vertically on small screens */
+        flex: 1 1 100%;
       }
     }
   </style>
+
 </head>
 <body>
-  <h2>Color Usage Reference</h2>
 
   <!-- Container for all color cards -->
   <div class="container">
